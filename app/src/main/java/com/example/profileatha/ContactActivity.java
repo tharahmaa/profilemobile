@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.osmdroid.config.Configuration;
@@ -21,28 +23,25 @@ public class ContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Initialize the osmdroid configuration
         Configuration.getInstance().setUserAgentValue(getPackageName());
 
         setContentView(R.layout.activity_contact);
 
-        // Set up the back button to finish the current activity
         Button backButton = findViewById(R.id.backToHomeButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Close the current activity
+                finish();
             }
         });
 
-        // Set up click listeners for the various TextViews
         setUpLink(R.id.instagram, "https://www.instagram.com/tharahmaa/");
         setUpLink(R.id.linkedin, "https://www.linkedin.com/in/atharahmaarianti");
         setUpLink(R.id.github, "https://github.com/tharahmaa");
         setUpPhoneCall(R.id.phone, "082115595576");
         setUpLink(R.id.alamat, "https://www.google.com/maps/search/?api=1&query=Tower 2 ITS");
+        setUpEmail(R.id.email, "atharahmaarianti@gmail.com");
 
-        // Initialize and set up the map
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
@@ -70,7 +69,6 @@ public class ContactActivity extends AppCompatActivity {
         map.onPause();
     }
 
-    // Helper method to set up link click listeners
     private void setUpLink(int textViewId, String url) {
         TextView textView = findViewById(textViewId);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +89,7 @@ public class ContactActivity extends AppCompatActivity {
         });
     }
 
-    // Method to open a URL in the browser
+    // buka URL di browser
     private void openUrl(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
@@ -101,5 +99,27 @@ public class ContactActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + phoneNumber));
         startActivity(intent);
+    }
+
+    private void setUpEmail(int textViewId, String email) {
+        TextView textView = findViewById(textViewId);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEmail(email);
+            }
+        });
+    }
+
+    private void openEmail(String email) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri data = Uri.parse("mailto:" + email + "?subject=" + Uri.encode("Subject") + "&body=" + Uri.encode("Body"));
+        intent.setData(data);
+
+        try {
+            startActivity(Intent.createChooser(intent, "Send email"));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "No email clients installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

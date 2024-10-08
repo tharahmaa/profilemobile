@@ -46,11 +46,15 @@
                     app:tint="#9AA0A6"/>
 
                 <TextView
+                    android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:text="Email: atharahmaarianti@gmail.com"
                     android:textSize="18sp"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 
@@ -177,7 +181,7 @@
                     android:fontFamily="sans-serif"
                     android:textSize="18sp"/>
 
-                      </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -186,7 +190,8 @@
     <org.osmdroid.views.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="345dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 
     <Button

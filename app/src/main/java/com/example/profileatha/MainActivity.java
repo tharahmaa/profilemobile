@@ -17,20 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inisialisasi TextView untuk "Profil Saya"
         TextView textViewProfile = findViewById(R.id.textView);
-
-        // Inisialisasi TextView untuk nama dan deskripsi
         TextView textViewName = findViewById(R.id.profileName);
-
         TextView textViewDescription = findViewById(R.id.profileDescription);
 
-        // Inisialisasi tombol
         Button cvButton = findViewById(R.id.cvButton);
         Button portfolioButton = findViewById(R.id.portfolioButton);
         Button contactButton = findViewById(R.id.contactButton);
 
-        // Set OnClickListener untuk setiap tombol
         cvButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

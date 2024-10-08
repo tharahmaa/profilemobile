@@ -17,7 +17,7 @@ public class CVActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // This will close the current activity and return to the previous one (MainActivity)
+                finish();
             }
         });
     }

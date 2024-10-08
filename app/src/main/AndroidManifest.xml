@@ -16,10 +16,6 @@
         android:theme="@style/Theme.Profileatha"
         tools:targetApi="31">
         <activity
-            android:name=".gmapsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Profileatha" />
-        <activity
             android:name=".ContactActivity"
             android:exported="false"
             android:theme="@style/Theme.Profileatha" />
