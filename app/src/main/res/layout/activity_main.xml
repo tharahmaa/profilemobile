@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#171717"> <!-- Dark background -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="14dp"
+            android:text="Profil Saya"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/> <!-- Light text color -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"
+            android:radius="120dp"
+            android:background="#1F1F1F"> <!-- Dark card background -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:contentDescription="Foto Profil"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/atha" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:background="@drawable/background_gradient"
+                    android:padding="16dp">
+
+                    <!-- TextView for Name -->
+                    <TextView
+                        android:id="@+id/profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:text="Atha Rahma Arianti"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <!-- TextView for Short Description -->
+                    <TextView
+                        android:id="@+id/profileDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Teknologi Informasi 2022"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/cvButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CV"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ripple_effect"
+            app:backgroundTint="#EA580C"
+            android:textColor="#FFFFFF"
+            />
+
+        <Button
+            android:id="@+id/portfolioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Portofolio"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#EA580C"
+            android:background="@drawable/ripple_effect"/>
+
+        <Button
+            android:id="@+id/contactButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="Kontak"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#EA580C"
+            android:background="@drawable/ripple_effect"/>
+    </LinearLayout>
+</ScrollView>

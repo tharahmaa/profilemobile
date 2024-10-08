@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#262626">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/portfolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Portofolio Desain"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:id="@+id/story"
+            android:layout_width="246dp"
+            android:layout_height="444dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Poster Diesnat"
+            android:src="@drawable/diesnat" />
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="246dp"
+            android:layout_height="310dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Poster OKKBK"
+            android:src="@drawable/okkbk" />
+
+        <ImageView
+            android:id="@+id/eksternal"
+            android:layout_width="246dp"
+            android:layout_height="307dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Eksternal"
+            android:src="@drawable/eksternal" />
+
+        <Button
+            android:id="@+id/backToHomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Kembali ke Beranda"
+            android:layout_marginTop="16dp"
+            app:backgroundTint="#EA580C"
+            android:background="@drawable/ripple_effect"/>
+
+    </LinearLayout>
+</ScrollView>
